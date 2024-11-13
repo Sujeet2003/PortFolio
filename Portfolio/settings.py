@@ -86,27 +86,27 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ.get('DB_NAME'),
-#         'USER': os.environ.get('DB_USER'),
-#         'PASSWORD': os.environ.get('DB_PASSWORD'),
-#         'HOST': os.environ.get('DB_HOST'),
-#         'PORT': os.environ.get('DB_PORT'),
-#     }    
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres.ngwmsjwrfqtxqrdhmrqe',
-        'PASSWORD': '8rCtLkf5gzp73HwZ',
-        'HOST': 'aws-0-us-east-1.pooler.supabase.com',
-        'PORT': '6543',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT'),
     }    
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres.ngwmsjwrfqtxqrdhmrqe',
+#         'PASSWORD': '8rCtLkf5gzp73HwZ',
+#         'HOST': 'aws-0-us-east-1.pooler.supabase.com',
+#         'PORT': '6543',
+#     }    
+# }
 
 
 # Password validation
@@ -146,7 +146,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
