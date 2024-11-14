@@ -15,6 +15,14 @@
 # echo "Build process completed successfully!"
 
 
+python3.11 -m pip uninstall psycopg2-binary -y
+python3.11 -m pip install psycopg2-binary==2.9.9 --no-cache-dir
+#!/bin/bash
+
+echo "Updating system packages..."
+apt-get update
+apt-get install -y libpq-dev python3-dev
+
 echo "Updating pip..."
 python3.11 -m pip install -U pip
 
