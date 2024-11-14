@@ -1,7 +1,7 @@
 asgiref
 certifi
 charset-normalizer
-Django
+Django>=4.0,<5.0
 idna
 packaging
 pillow
