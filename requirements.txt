@@ -12,6 +12,5 @@ sqlparse
 typing_extensions
 tzdata
 urllib3
-django>=4.0,<5.0
 gunicorn
 psycopg2-binary
