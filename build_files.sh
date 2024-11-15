@@ -14,29 +14,18 @@
 # # Step 4: Confirm completion
 # echo "Build process completed successfully!"
 
+echo "BUILD START"
 
-python3.11 -m pip uninstall psycopg2-binary -y
-python3.11 -m pip install psycopg2-binary==2.9.9 --no-cache-dir
-#!/bin/bash
+# create a virtual environment named 'venv' if it doesn't already exist
+python3.9 -m venv venv
 
-echo "Updating system packages..."
-apt-get update
-apt-get install -y libpq-dev python3-dev
+# activate the virtual environment
+source venv/bin/activate
 
-echo "Updating pip..."
-python3.11 -m pip install -U pip
+# install all deps in the venv
+pip install -r requirements.txt
 
-# Install dependencies
-echo "Installing project dependencies..."
-python3.11 -m pip install -r requirements.txt
+# collect static files using the Python interpreter from venv
+python3.9 manage.py collectstatic --noinput
 
-# Make migrations
-echo "Making migrations..."
-python3.11 manage.py makemigrations --noinput
-python3.11 manage.py migrate --noinput
-
-# Collect static files
-echo "Collecting static files..."
-python3.11 manage.py collectstatic --noinput --clear
-
-echo "Build process completed!"
+echo "BUILD END"
