@@ -80,40 +80,18 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
+from urllib.parse import urlparse
+tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
-        'OPTIONS': {
-            'sslmode': 'require',  # Enables SSL
-        },
-    }    
+        'NAME': tmpPostgres.path.replace('/', ''),
+        'USER': tmpPostgres.username,
+        'PASSWORD': tmpPostgres.password,
+        'HOST': tmpPostgres.hostname,
+        'PORT': 5432,
+    }
 }
-
-print(f"{os.environ.get('DB_NAME')} \n {os.environ.get('DB_USER')}\n {os.environ.get('DB_PASSWORD')}\n {os.environ.get('DB_HOST')}\n {os.environ.get('DB_PORT')}")
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'postgres',
-#         'USER': 'postgres.ngwmsjwrfqtxqrdhmrqe',
-#         'PASSWORD': '8rCtLkf5gzp73HwZ',
-#         'HOST': 'aws-0-us-east-1.pooler.supabase.com',
-#         'PORT': '6543',
-#     }    
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
