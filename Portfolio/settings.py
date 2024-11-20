@@ -90,11 +90,11 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT', 6543),
+        'NAME': "postgres",
+        'USER': "postgres.ngwmsjwrfqtxqrdhmrqe",
+        'PASSWORD': "8rCtLkf5gzp73HwZ",
+        'HOST': "aws-0-us-east-1.pooler.supabase.com",
+        'PORT': 6543,
     }    
 }
 
