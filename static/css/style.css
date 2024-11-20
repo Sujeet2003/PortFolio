@@ -41,8 +41,9 @@ nav {
 }
 .navbar-brand {
     font-size: 25px !important;
-    font-family: "Bungee Spice", sans-serif;
-    font-style: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    color: #fff !important;
 }
 
 #navbarNavDropdown .nav-item .nav-link.active {
