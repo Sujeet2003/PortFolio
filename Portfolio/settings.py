@@ -95,8 +95,13 @@ DATABASES = {
         'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT'),
+        'OPTIONS': {
+            'sslmode': 'require',  # Enables SSL
+        },
     }    
 }
+
+print(f"{os.environ.get('DB_NAME')} \n {os.environ.get('DB_USER')}\n {os.environ.get('DB_PASSWORD')}\n {os.environ.get('DB_HOST')}\n {os.environ.get('DB_PORT')}")
 
 # DATABASES = {
 #     'default': {
