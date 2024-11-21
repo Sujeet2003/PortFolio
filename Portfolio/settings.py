@@ -85,13 +85,13 @@ tmpPostgres = urlparse(os.getenv("DATABASE_URL"))
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': tmpPostgres.path.lstrip('/'),  # Remove leading slash from path
-        'USER': tmpPostgres.username,
-        'PASSWORD': tmpPostgres.password,
-        'HOST': tmpPostgres.hostname,
-        'PORT': tmpPostgres.port or 5432,  # Default to 5432 if port is missing
+        'NAME': 'Postgres',  # Database name
+        'USER': 'Postgres_owner',  # Username
+        'PASSWORD': '2IKkzrvsai6T',  # Password
+        'HOST': 'ep-sweet-thunder-a5bhsetk.us-east-2.aws.neon.tech',  # Host address
+        'PORT': '5432',  # Default PostgreSQL port
         'OPTIONS': {
-            'sslmode': 'require',  # Required for Neon/Render connections
+            'sslmode': 'require',  # Enforce SSL connection
         },
     }
 }
