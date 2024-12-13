@@ -127,13 +127,14 @@
                         <h3 style="text-align: center;">Resume</h3>
                         <div class="resume-buttons">
                             <a
-                                href="{% static 'files/SUJEET KUMAR - Resume.pdf' %}"
+                                href="{% static 'files/sujeet_kumar_resume.pdf' %}"
                                 target="_blank"><button
                                     type="button"
                                     class="btn btn-secondary fa fa-eye">&nbsp;
                                     View
                                     Resume</button></a>
-                            <a href="{% static 'files/Resume.pdf' %}"
+                            <a
+                                href="{% static 'files/sujeet_kumar_resume.pdf' %}"
                                 download><button
                                     type="button"
                                     class="btn btn-success fa fa-download">&nbsp;
@@ -210,7 +211,16 @@
                                     {{experience.last_date}}
                                     {% endif %}
                                 </span>
-                                <span>{{experience.location}}</span></li>
+                                <span>{{experience.location}}
+                                    <a
+                                        href="https://drive.google.com/file/d/1OeCnDJ7Sg7cozoBdBJMLgtMXzOIz1EUr/view?usp=sharing"
+                                        target="_blank">
+                                        <button id="viewDocsBtn"
+                                            class="btn btn-primary">View
+                                            Docs</button>
+                                    </a>
+                                </span>
+                            </li>
                             <li class="list-group-item">
                                 {% if experience.description1 != None %}
                                 {{experience.description1}}
@@ -380,6 +390,9 @@
                             style="color: #0077B5;"></i></a>
                     <a href="https://github.com/Sujeet2003" target="_blank"><i
                             class="fab fa-github"
+                            style="color: #353a3f;"></i></a>
+                    <a href="https://kaggle.com/Sujeet2003" target="_blank"><i
+                            class="fab fa-kaggle"
                             style="color: #353a3f;"></i></a>
                     <a href="https://www.instagram.com/_sujeet_sm_patel_/"
                         target="_blank"><i class="fab fa-instagram"

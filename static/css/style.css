@@ -261,6 +261,10 @@ nav {
     justify-content: space-between;
 }
 
+.experience-lists #viewPdfBtn {
+    font-weight: bold !important;
+}
+
 @media(max-width: 768px) {
     .experience-lists .list-group-item:nth-child(1) {
         flex-wrap: wrap;
